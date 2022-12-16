@@ -1,0 +1,39 @@
+.skills {
+  color: #313131;
+
+  &__card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @mixin atLaptop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &--t-margin {
+      margin-top: 2rem;
+    }
+  }
+
+  &__card {
+    border-radius: 0 1.25rem 1.25rem 1.25rem;
+    height: 19rem;
+    width: 17rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.2rem;
+
+    @mixin atLaptop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__card-text-content {
+    padding: 1em;
+
+    & > p {
+      font-weight: 200;
+      line-height: 1.7;
+    }
+  }
+}

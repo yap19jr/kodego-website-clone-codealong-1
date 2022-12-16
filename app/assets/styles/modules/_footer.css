@@ -1,0 +1,84 @@
+.footer {
+  background: $secondaryBlue;
+  color: #c7c7cc;
+
+  &__container {
+    display: flex;
+  }
+
+  &__heading {
+    display: block;
+    color: #fff;
+    margin-bottom: 1em;
+  }
+
+  &__logo {
+    text-align: center;
+    margin-bottom: 1em;
+
+    @mixin atLaptop {
+      text-align: left;
+      margin-bottom: 0;
+      margin-right: auto;
+    }
+  }
+
+  &__logo img {
+    filter: grayscale(1) invert(1) brightness(100);
+    width: 70%;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(199, 199, 204, 0.5);
+
+    @mixin atLaptop {
+      flex-direction: row;
+    }
+  }
+
+  &__section {
+    padding: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @mixin atLaptop {
+      width: 33%;
+    }
+
+    &--social-links {
+      & ul {
+        display: flex;
+      }
+
+      & li {
+        margin-right: 1em;
+      }
+    }
+  }
+
+  &__quick-links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__copyright {
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @mixin atLaptop {
+      flex-direction: row;
+    }
+  }
+
+  & li,
+  & li a {
+    font-weight: 100;
+    margin-bottom: 1em;
+  }
+}

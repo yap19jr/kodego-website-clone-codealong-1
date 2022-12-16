@@ -1,0 +1,157 @@
+.header {
+  color: $mainBlue;
+
+  &__container {
+    @mixin atLaptop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__mobile-nav-toggle {
+    display: none;
+  }
+
+  &__mobile-nav-trigger {
+    z-index: 10;
+    position: absolute;
+    top: 2.5rem;
+    right: 1.75rem;
+    width: 1.5rem;
+    height: 3px;
+    background: $mainBlue;
+
+    &::before {
+      z-index: 10;
+      position: relative;
+      content: "";
+      display: block;
+      background: $mainBlue;
+      height: 100%;
+      width: 100%;
+      top: -200%;
+    }
+
+    &::after {
+      z-index: 10;
+      position: relative;
+      content: "";
+      display: block;
+      background: $mainBlue;
+      height: 100%;
+      width: 100%;
+      top: 100%;
+    }
+
+    @mixin atLaptop {
+      display: none;
+    }
+  }
+
+  &__mobile-nav-toggle:checked ~ &__mobile-nav-trigger {
+    background: transparent;
+
+    &::before {
+      transform: rotate(45deg) translateY(-100%);
+      transform-origin: 0;
+    }
+
+    &::after {
+      transform: rotate(-45deg) translateY(100%);
+      transform-origin: 0;
+    }
+  }
+
+  &__logo {
+    @mixin atLaptop {
+      transform: scale(0.7);
+    }
+  }
+
+  &__mobile-nav-toggle:checked ~ &__nav {
+    margin-right: 0;
+    visibility: visible;
+    opacity: 1;
+
+    &::before {
+      margin-left: -150%;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    padding: 5rem 2.5rem 2.5rem 5rem;
+    margin-right: -100vw;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease-in;
+
+    @mixin atLaptop {
+      margin-right: 0;
+      visibility: visible;
+      opacity: 1;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      position: relative;
+      padding: 0;
+    }
+
+    &::before {
+      z-index: -1;
+      position: absolute;
+      content: "";
+      display: block;
+      background: rgba(0, 0, 0, 0.4);
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+    }
+
+    & > ul {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+
+      @mixin atLaptop {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    & > ul > li {
+      margin-bottom: 1.2em;
+      text-align: right;
+
+      @mixin atLaptop {
+        margin-bottom: 0;
+        margin-right: 1em;
+        text-align: center;
+      }
+    }
+  }
+
+  &__user-links {
+    padding: 0.75em;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+
+    @mixin atLaptop {
+      border-bottom: none;
+      padding: 0;
+    }
+
+    & > a:first-of-type {
+      margin-right: 0.75rem;
+    }
+  }
+}

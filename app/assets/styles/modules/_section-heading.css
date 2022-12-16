@@ -1,0 +1,12 @@
+.section-heading {
+  color: $mainBlue;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: auto;
+  padding-top: 2.5em;
+
+  @mixin atLaptop {
+    font-size: 1.875rem;
+    padding-top: 1em;
+  }
+}

@@ -1,0 +1,35 @@
+@define-mixin atSmallScreen {
+  @media (min-width: 480px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin atMobileMedium {
+  @media (min-width: 375px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin atMobileLarge {
+  @media (min-width: 425px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin atTablet {
+  @media (min-width: 768px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin atLaptop {
+  @media (min-width: 1024px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin atLaptopLarge {
+  @media (min-width: 1200px) {
+    @mixin-content;
+  }
+}
